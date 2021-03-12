@@ -23,7 +23,7 @@ server:
   port: 8082
 
 info:
-  version: 1.0
+  version: 2
 
 ---
 spring:
