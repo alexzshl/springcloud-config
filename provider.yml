@@ -2,7 +2,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: cloud-provider
+    name: cloud-config-client
 server:
   port: 8080
 
