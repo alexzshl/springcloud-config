@@ -1,37 +1,35 @@
+server:
+  port: 8001
+
 spring:
   profiles:
     active: dev
   application:
-    name: cloud-provider
-server:
-  port: 8080
+    name: cloud-config-client
 
-info:
-  version: 1.0
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka6001.com:6001/eureka,http://eureka6002.com:6002/eureka,http://eureka6003.com:6003/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
 
----
-spring:
-  profiles: prod
-server:
-  port: 8081
 
-info:
-  version: 1.0
 
 ---
 spring:
   profiles: dev
 server:
-  port: 8082
+  port: 8002
 
 info:
-  version: 2.0
+  version: 1.0
 
 ---
 spring:
   profiles: test
 server:
-  port: 8083
-
-info:
-  version: 1.0
+  port: 8003
