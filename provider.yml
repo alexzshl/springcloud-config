@@ -1,11 +1,10 @@
-server:
-  port: 8001
-
 spring:
   profiles:
     active: dev
   application:
-    name: cloud-config-client
+    name: cloud-provider
+server:
+  port: 8080
 
 eureka:
   client:
@@ -17,13 +16,11 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true
 
-
-
 ---
 spring:
   profiles: dev
 server:
-  port: 8002
+  port: 8082
 
 info:
   version: 1.0
@@ -32,4 +29,4 @@ info:
 spring:
   profiles: test
 server:
-  port: 8003
+  port: 8083
