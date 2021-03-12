@@ -6,11 +6,17 @@ spring:
 server:
   port: 8080
 
+info:
+  version: 1.0
+
 ---
 spring:
   profiles: prod
 server:
   port: 8081
+
+info:
+  version: 1.0
 
 ---
 spring:
@@ -18,8 +24,14 @@ spring:
 server:
   port: 8082
 
+info:
+  version: 2.0
+
 ---
 spring:
   profiles: test
 server:
   port: 8083
+
+info:
+  version: 1.0
